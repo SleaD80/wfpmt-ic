@@ -1,0 +1,23 @@
+.container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 13rem);
+    justify-content: center;
+    grid-gap: 0.5rem;
+    /* grid-template-rows: 20rem; */
+    /* grid-auto-rows: minmax(8rem, auto); */
+    /* grid-auto-flow: row dense; */
+    /* grid-auto-columns: 8rem; */
+}
+
+.label {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+.attr {
+  border: 1px solid #fa923f;
+  /* background: #ffbd87; */
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
