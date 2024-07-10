@@ -19,6 +19,11 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
   args: {
+  },
+};
+
+export const Values = {
+  args: {
     number: 2,
     date: '03.07.2024',
     name: 'Шигорина Наталья Николаевна',
