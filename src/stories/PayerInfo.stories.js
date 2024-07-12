@@ -18,8 +18,7 @@ export default {
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
-  args: {
-  },
+  args: {},
 };
 
 export const Values = {
@@ -31,6 +30,14 @@ export const Values = {
     inn: '00334052',
     amount: '0-00',
     address: 'г. Москва, ул. Дмитрия Ульянова 158/1',
-    fee: 'OUR'
+    fee: 'OUR',
+  },
+};
+
+export const Payment = {
+  args: {
+    payer_account: '',
+    client_id: '00234052',
+    form_type: 'EXT-RUB',
   },
 };

@@ -1,0 +1,144 @@
+{
+  "payment": {
+    "fields": [
+      {
+        "name": "payer_account",
+        "value": null,
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "client_id",
+        "value": "00234052",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "form_type",
+        "value": "EXT-RUB",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_name",
+        "value": "ШИГОРИНА НАТАЛЬЯ НИКОЛАЕВНА",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_inn",
+        "value": "0",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_inn_cif",
+        "value": "0",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_phone_email",
+        "value": "+7-494-2326120 schnn@mail.ru",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_address",
+        "value": "г. Москва, ул. Дмитрия Ульянова 158/1, кв. 12",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_segment",
+        "value": "STAFF",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_kpp",
+        "value": "773851001",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_bank_name",
+        "value": "ЗАО ЮНИКРЕДИТ БАНК Г МОСКВА",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_bank_bic",
+        "value": "044525545",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_bank_account",
+        "value": "30101810300000000545",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      },
+      {
+        "name": "payer_account_cbtype",
+        "value": "14",
+        "values": null,
+        "status": "OK",
+        "message": ""
+      }
+    ],
+    "currentField": null,
+    "accounts": [
+      {
+        "accontNumber": "00397741RURSTPF101",
+        "currentBalance": "2.83",
+        "openBalance": "2.83",
+        "cbAccountNumber": "40817810050011139320",
+        "description": "",
+        "currencyCode": "RUR",
+        "currencyDigital": "810",
+        "accountSpecial": "STPF1"
+      },
+      {
+        "accontNumber": "00397741RURSTPF101",
+        "currentBalance": "20000.83",
+        "openBalance": "20000.83",
+        "cbAccountNumber": "40702810800404929610",
+        "description": "",
+        "currencyCode": "RUR",
+        "currencyDigital": "810",
+        "accountSpecial": "STPF1"
+      },
+      {
+        "accontNumber": "00397741RURPROC101",
+        "currentBalance": "1.00",
+        "openBalance": "1.00",
+        "cbAccountNumber": "40817810900014095294",
+        "description": "Счет кредитной карты",
+        "currencyCode": "RUR",
+        "currencyDigital": "810",
+        "accountSpecial": "PROC1"
+      }
+    ],
+    "action": "getClientInfo",
+    "frozen": null,
+    "editable": "false",
+    "cansign": "false",
+    "canprint": "true",
+    "canselectpmt": "true",
+    "canseebalance": null
+  }
+}
