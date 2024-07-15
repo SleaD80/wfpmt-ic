@@ -1,4 +1,5 @@
 import PayerInfo from '../components/PayerInfo';
+import DataProvider from './decorators/DataProvider';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -21,23 +22,17 @@ export const Default = {
   args: {},
 };
 
-export const Values = {
+export const TestData = {
   args: {
-    number: 2,
-    date: '03.07.2024',
-    name: 'Шигорина Наталья Николаевна',
-    account: '00000000000000000000',
-    inn: '00334052',
-    amount: '0-00',
-    address: 'г. Москва, ул. Дмитрия Ульянова 158/1',
+    payer_name: 'Шигорина Наталья Николаевна',
+    payer_account: '00000000000000000000',
+    payer_inn: '00334052',
+    payer_amount: '0-00',
+    payer_address: 'г. Москва, ул. Дмитрия Ульянова 158/1',
     fee: 'OUR',
   },
 };
 
-export const Payment = {
-  args: {
-    payer_account: '',
-    client_id: '00234052',
-    form_type: 'EXT-RUB',
-  },
-};
+const Template = (args) => <PayerInfo {...args} />;
+export const PaymentData = Template.bind({});
+PaymentData.decorators = [(Story) => <DataProvider><Story/></DataProvider>];

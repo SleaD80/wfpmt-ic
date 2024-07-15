@@ -1,40 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-function transform(payment) {
-  payment.fields.map((field) => (payment[field.name] = field.value));
-}
 
-function PayerInfo(props) {
-  // const API_URL = 'http://ucbqawebowl67:8009/pmtvalidation/validate/';
-  const API_URL = 'http://localhost:3000/payment';
+function PayerInfo({payer_name, payer_inn, payer_amount, payer_address}) {
   const [validated, setValidated] = useState(false);
-  const [payment, setPayment] = useState(null);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    // const requestOptions = {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     fields: [
-    //       { name: 'payer_account' },
-    //       { name: 'client_id', value: '00234052' },
-    //       { name: 'form_type', value: 'EXT-RUB' },
-    //     ],
-    //     action: 'getClientInfo',
-    //   }),
-    // };
-    // fetch(API_URL, requestOptions)
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((payment) => setPayment(payment))
-      .catch((error) => setError(error.message));
-  }, []);
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -49,27 +21,10 @@ function PayerInfo(props) {
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group as={Row} className="mb-3">
         <Form.Label column sm={2}>
-          №
-        </Form.Label>
-        <Col sm={3}>
-          <Form.Control required type="text" defaultValue={props.number} />
-          <Form.Control.Feedback type="invalid">
-            Укажите номер документа
-          </Form.Control.Feedback>
-        </Col>
-        <Form.Label column sm={2}>
-          от
-        </Form.Label>
-        <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.date} />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm={2}>
           Плательщик:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.name} />
+          <Form.Control type="text" defaultValue={payer_name} />
         </Col>
         <Form.Label column sm={2}>
           Номер счета:
@@ -90,13 +45,13 @@ function PayerInfo(props) {
           ИНН:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.inn} />
+          <Form.Control type="text" defaultValue={payer_inn} />
         </Col>
         <Form.Label column sm={2}>
           Сумма:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.amount} />
+          <Form.Control type="text" defaultValue={payer_amount} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
@@ -104,13 +59,13 @@ function PayerInfo(props) {
           Адрес места жительства:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.address} />
+          <Form.Control type="text" defaultValue={payer_address} />
         </Col>
         <Form.Label column sm={2}>
           Комиссии и расходы:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={props.fee} />
+          <Form.Control type="text" />
         </Col>
       </Form.Group>
       <Button variant="secondary" type="submit">
