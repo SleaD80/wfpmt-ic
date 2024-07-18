@@ -24,11 +24,11 @@ export const Default = {
 
 export const TestData = {
   args: {
-    payer_name: 'Шигорина Наталья Николаевна',
-    payer_account: '00000000000000000000',
-    payer_inn: '00334052',
-    payer_amount: '0-00',
-    payer_address: 'г. Москва, ул. Дмитрия Ульянова 158/1',
+    name: {value: 'Шигорина Наталья Николаевна'},
+    account: {value: '00000000000000000000'},
+    inn: {value: '00334052'},
+    amount: {value: '0-00'},
+    address: {value: 'г. Москва, ул. Дмитрия Ульянова 158/1'},
     fee: 'OUR',
   },
 };

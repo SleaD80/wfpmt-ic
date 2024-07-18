@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 
-function PayerInfo({payer_name, payer_inn, payer_amount, payer_address}) {
+function PayerInfo({name, inn, amount, address}) {
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -24,7 +24,7 @@ function PayerInfo({payer_name, payer_inn, payer_amount, payer_address}) {
           Плательщик:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={payer_name} />
+          <Form.Control type="text" defaultValue={name?.value} />
         </Col>
         <Form.Label column sm={2}>
           Номер счета:
@@ -45,13 +45,16 @@ function PayerInfo({payer_name, payer_inn, payer_amount, payer_address}) {
           ИНН:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={payer_inn} />
+          <Form.Control type="text" defaultValue={inn?.value} className={inn?.status==="ERROR"?"is-invalid":"is-valid"} />
+          <Form.Control.Feedback type="invalid">
+            {inn?.message}
+          </Form.Control.Feedback>
         </Col>
         <Form.Label column sm={2}>
           Сумма:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={payer_amount} />
+          <Form.Control type="text" defaultValue={amount?.value} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
@@ -59,7 +62,7 @@ function PayerInfo({payer_name, payer_inn, payer_amount, payer_address}) {
           Адрес места жительства:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={payer_address} />
+          <Form.Control type="text" defaultValue={address?.value} />
         </Col>
         <Form.Label column sm={2}>
           Комиссии и расходы:

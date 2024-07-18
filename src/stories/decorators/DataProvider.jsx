@@ -9,9 +9,17 @@ function DataProvider() {
     fetch(API_URL)
       .then((res) => res.json())
       .then((payment) => {
-        let p = {};
-        payment.fields.map((field) => (p[field.name] = field.value));
-        setPayer(p);
+        setPayer(
+          payment.fields
+            .filter((field) => !!field.name.startsWith('payer_'))
+            .reduce(
+              (payer, field) => ({
+                ...payer,
+                [field.name.substr(6)]: { ...field } ,
+              }),
+              {}
+            )
+        );
       });
     // .catch((error) => setError(error.message));
   }, []);
