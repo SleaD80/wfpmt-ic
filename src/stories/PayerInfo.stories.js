@@ -26,12 +26,19 @@ export const TestData = {
   args: {
     name: {value: 'Шигорина Наталья Николаевна'},
     account: {value: '00000000000000000000'},
-    inn: {value: '00334052'},
+    inn: {value: '00334052', "status": "ERROR", "message": "Некорректное значение"},
     amount: {value: '0-00'},
     address: {value: 'г. Москва, ул. Дмитрия Ульянова 158/1'},
     fee: 'OUR',
   },
 };
+
+export const TooltipStyle = {
+  args: {
+    ...TestData.args,
+    warningStyle: 'tooltip',
+  },
+}
 
 const Template = (args) => <PayerInfo {...args} />;
 export const PaymentData = Template.bind({});

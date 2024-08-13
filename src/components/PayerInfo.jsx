@@ -1,25 +1,25 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 
-function PayerInfo({name, inn, amount, address}) {
+function PayerInfo({name, inn, amount, address, warningStyle}) {
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-    }
+    // }
 
     setValidated(true);
   };
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group as={Row} className="mb-3" style={{position: "relative"}}>
         <Form.Label column sm={2}>
           Плательщик:
         </Form.Label>
@@ -30,23 +30,24 @@ function PayerInfo({name, inn, amount, address}) {
           Номер счета:
         </Form.Label>
         <Col sm={3}>
-          <Form.Select required>
+          <Form.Select required isInvalid>
             <option></option>
-            <option value="1">00000000000000000000</option>
-            <option value="2">12345678901234567890</option>
+            <option value="1">40817810050011139320</option>
+            <option value="2">40702810800404929610</option>
+            <option value="3">40817810900014095294</option>
           </Form.Select>
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type="invalid" tooltip={warningStyle==="tooltip"} >
             Выберите номер счета
           </Form.Control.Feedback>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group as={Row} className="mb-3" style={{position: "relative"}}>
         <Form.Label column sm={2}>
           ИНН:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" defaultValue={inn?.value} className={inn?.status==="ERROR"?"is-invalid":"is-valid"} />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control type="text" defaultValue={inn?.value} isInvalid={inn?.status==="ERROR"} />
+          <Form.Control.Feedback type="invalid" tooltip={warningStyle==="tooltip"} >
             {inn?.message}
           </Form.Control.Feedback>
         </Col>
@@ -71,9 +72,9 @@ function PayerInfo({name, inn, amount, address}) {
           <Form.Control type="text" />
         </Col>
       </Form.Group>
-      <Button variant="secondary" type="submit">
+      {/* <Button variant="secondary" type="submit">
         Проверить
-      </Button>
+      </Button> */}
     </Form>
   );
 }

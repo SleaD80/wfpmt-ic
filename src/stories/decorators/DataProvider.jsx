@@ -25,10 +25,10 @@ function DataProvider() {
   }, []);
 
   return <PayerInfo {...payer} />;
-  //    return React.Children.map(props.children, child => {
-  //      return React.cloneElement(child, { "payment": payment });
-  //    });
-  //   props.children(payment);
+  // Hasn't work yet
+    //  return React.Children.map(props.children, child => {
+      //  return React.cloneElement(child, {...payer});
+    //  });
 }
 
 export default DataProvider;
